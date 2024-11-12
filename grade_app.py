@@ -23,12 +23,6 @@ if uploaded_file is not None:
     df = pd.read_csv(uploaded_file)
     st.write("Data Preview:", df.head())
 
-    # Display Boxplots for feature outlier detection
-    st.subheader('Boxplot for Feature Outlier Detection')
-    plt.figure(figsize=(15, 10))
-    sns.boxplot(data=df)
-    st.pyplot()
-
     # Calculate IQR for Outlier Removal
     Q1 = df.quantile(0.25)
     Q3 = df.quantile(0.75)
